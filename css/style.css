@@ -151,8 +151,8 @@ button:hover {
 button:focus-visible {
     outline: none;
   /* primary */
-    box-shadow: 0 0 0 3px oklch(from var(--color-primary-400) l c calc(h / 0.25));
-    border-color: oklch(60.483% 0.21664 257.23);
+    box-shadow: 0 0 0 3px oklch(from var(--color-primary-400) l c h / .25);
+    border-color: var(--color-primary-400);
 }
 
 /* Active State: Slight "pressed" look */
