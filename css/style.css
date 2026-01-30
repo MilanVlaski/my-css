@@ -1,0 +1,163 @@
+/* Reset */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html,
+body,
+ul,
+ol,
+menu,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dt,
+dd {
+    margin: 0;
+    padding: 0;
+}
+
+button,
+input,
+select,
+textarea,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font: inherit;
+}
+
+ul,
+ol,
+summary {
+    list-style: none;
+}
+
+button,
+input[type=radio],
+input[type=checkbox],
+label,
+select,
+summary {
+    cursor: pointer;
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+/* Reset */
+
+:root {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: clamp(16px, 0.5vw + 12px, 24px);
+
+    --color-primary-400: oklch(75% 0.15 235);
+}
+
+/* Typography */
+
+p {
+    line-height: 1.5;}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2;
+}
+
+h1 { font-size: 3.052rem; }
+h2 { font-size: 2.441rem; }
+h3 { font-size: 1.953rem; }
+h4 { font-size: 1.563rem;}
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p { font-size: 1rem; }
+
+
+section {
+    /* should be var(--spacing) */
+    padding: 1rem;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol {
+    margin-top: 1rem;
+}
+
+section > :first-child {
+    margin-top: 0 !important;
+}
+
+section > :last-child {
+    margin-bottom: 0 !important;
+}
+/* Typography */
+
+/* Button */
+button {
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.5rem 1rem;
+  
+  /* Typography */
+  /* font-size: 14px; */
+  font-weight: 500;
+  
+  /* should be transparent, and variables should be used */
+  background-color: oklch(100% 0.00011 271.152);
+  color: #212529;
+  /* border + border color */
+  border: 1px solid oklch(90.279% 0.00765 260.878);
+  /* border radius */
+  border-radius: 4px;
+  
+  /* Interaction */
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+/* Hover State: Subtle gray shift */
+button:hover {
+    /* neutral */
+    background-color: oklch(98.164% 0.00181 249.244);
+    border-color: oklch(82.771% 0.0143 258.441);
+    color: oklch(20.817% 0.00673 258.419);
+}
+
+/* Focus State: The signature blue ring */
+button:focus-visible {
+    outline: none;
+  /* primary */
+    box-shadow: 0 0 0 3px oklch(from var(--color-primary-400) l c calc(h / 0.25));
+    border-color: oklch(60.483% 0.21664 257.23);
+}
+
+/* Active State: Slight "pressed" look */
+button:active {
+    background-color: oklch(96.32% 0.00353 248.568);
+    transform: translateY(1px);
+}
+/* Button */
