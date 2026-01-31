@@ -1,1 +1,6 @@
-- [ ] Check out the colors snippet, and compare how oklch changes
+- [ ] Define neutrals https://tailwindcss.color-get.com/code/fafafa
+- [ ] Reverse engineer the shoelace button style wise, with hard coded values.
+- [ ] Parameterize the values into "button" and "input" specific ones, with the hard coded colors
+- [ ] Parameterize those colors into neutrals, defining "shifts" as usually it won't fit 100%
+- [ ] Define dark mode, watch it break, define a custom dark mode mapping
+- [ ] Icon buttons

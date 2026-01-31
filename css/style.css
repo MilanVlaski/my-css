@@ -55,27 +55,11 @@ summary {
 
 /* Reset */
 
-:root {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: clamp(16px, 0.5vw + 12px, 24px);
-    
-    --color-primary-400: oklch(75% 0.15 235);
-    
-    --color-neutral-900: oklch(98% 0 270);
-    --color-neutral-800: oklch(85% 0 270);
-
-    --border-radius: 4px;
-}
-
-body {
-    scroll-behavior: smooth;
-    background-color: var(--color-neutral-900);
-}
-
 /* Typography */
 
 p {
-    line-height: 1.5;}
+    line-height: 1.5;
+}
 
 h1,
 h2,
@@ -122,51 +106,116 @@ section > :last-child {
 }
 /* Typography */
 
-/* Button */
+body {
+    scroll-behavior: smooth;
+}
+
+:root {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: clamp(16px, 0.5vw + 12px, 24px);
+
+    --color-primary-50: oklch(0.975 0.018 188.29);
+    --color-primary-100: oklch(0.949 0.034 192.06);
+    --color-primary-200: oklch(0.902 0.068 189.13);
+    --color-primary-300: oklch(0.863 0.094 188.78);
+    --color-primary-400: oklch(0.823 0.115 188.18);
+    --color-primary-500: oklch(0.79 0.129 186.7);
+    --color-primary-600: oklch(0.679 0.112 186.56);
+    --color-primary-700: oklch(0.552 0.09 186.96);
+    --color-primary-800: oklch(0.408 0.065 186.09);
+    --color-primary-900: oklch(0.261 0.038 189.41);
+    --color-primary-950: oklch(0.18 0.024 190.37);
+
+
+
+    --color-neutral-800: oklch(85.5% 0.005 185);
+
+
+    --color-neutral-50: oklch(98.5% 0.005 185);
+    --color-neutral-100: oklch(90% 0.005 185);
+    --color-neutral-200: oklch(80% 0.005 185);
+    --color-neutral-300: oklch(70% 0.005 185);
+    --color-neutral-400: oklch(60% 0.005 185);
+    --color-neutral-500: oklch(50% 0.005 185);
+    --color-neutral-600: oklch(40% 0.005 185);
+    --color-neutral-700: oklch(30% 0.005 185);
+    --color-neutral-800: oklch(20% 0.005 185);
+    --color-neutral-900: oklch(10% 0.005 185);
+    --color-neutral-950: oklch(5% 0.005 185);
+
+
+
+    --color-neutral-0: oklch(99% 0.005 185);
+
+    --transition-x-fast: 50ms;
+
+    background-color: var(--color-neutral-50);
+    color: var(--color-neutral-950);
+
+
+
+    --input-border-width: 1px;
+    --input-border-radius: 4px;
+    --input-border-color: var(--color-neutral-200);
+
+    --button-background: var(--color-neutral-50);
+    --button-background-hover: var(--color-primary-100);
+    --button-background-active: var(--color-primary-200);
+    /* button color, border for active and hover */
+}
+
+
+/* .button--standard.button--default {
+    background-color: var(--sl-color-neutral-0);
+    border-color: var(--sl-input-border-color);
+    color: var(--sl-color-neutral-700);
+}
+
+.button--medium {
+    height: auto;
+    min-height: var(--sl-input-height-medium);
+    font-size: var(--sl-button-font-size-medium);
+    line-height: calc(var(--sl-input-height-medium) - var(--sl-input-border-width) * 2);
+    border-radius: var(--sl-input-border-radius-medium);
+} */
+
 button {
-  /* Layout */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+    display: inline-flex;
+    align-items: stretch;
+    justify-content: center;
+    vertical-align: middle;
 
-  padding: 0.5rem 1rem;
-  
-  /* Typography */
-  font-weight: 500;
-  
-  /* should be transparent, and variables should be used */
-  background-color: var(--color-neutral-900);
-  color: #212529;
-  /* border + border color */
-  border: 1px solid var(--color-neutral-800);
-  /* border radius */
-  border-radius: var(--border-radius);
-  
-  /* Interaction */
-  cursor: pointer;
-  transition: all 0.15s ease;
-  user-select: none;
+    border-style: solid;
+    border-width: var(--input-border-width);
+    border-radius: var(--input-border-radius);
+    border-color: var(--input-border-color);
+
+    font-weight: 500;
+    font-size: 0.875rem;
+    text-decoration: none;
+    white-space: nowrap;
+
+    user-select: none;
+    cursor: inherit;
+
+    padding: 0.75em 1em;
+    transition: var(--transition-x-fast) background-color, var(--transition-x-fast) color, var(--transition-x-fast) border, var(--transition-x-fast) box-shadow;
+
+    /* Default colors */
+    color: currentColor;
+    background-color: var(--button-background);
 }
 
-/* Hover State: Subtle gray shift */
 button:hover {
-    /* neutral */
-    background-color: oklch(98.164% 0.00181 249.244);
-    border-color: oklch(82.771% 0.0143 258.441);
-    color: oklch(20.817% 0.00673 258.419);
+    background-color: var(--button-background-hover);
+    border-color: var(--color-primary-300);
+    color: var(--color-primary-800);
+
+    cursor: pointer;
 }
 
-/* Focus State: The signature blue ring */
-button:focus-visible {
-    outline: none;
-  /* primary */
-    box-shadow: 0 0 0 3px oklch(from var(--color-primary-400) l c h / .25);
-    border-color: var(--color-primary-400);
-}
-
-/* Active State: Slight "pressed" look */
 button:active {
-    background-color: oklch(96.32% 0.00353 248.568);
-    transform: translateY(1px);
+    background-color: var(--button-background-active);
+    border-color: var(--color-primary-400);
+    color: var(--color-primary-800);
 }
-/* Button */
