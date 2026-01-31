@@ -159,9 +159,14 @@ body {
     --input-border-color: var(--color-neutral-200);
 
     --button-background: var(--color-neutral-50);
+
     --button-background-hover: var(--color-primary-100);
+    --button-border-color-hover: var(--color-primary-300);
+    --button-foreground-hover: var(--color-primary-700);
+
     --button-background-active: var(--color-primary-200);
-    /* button color, border for active and hover */
+    --button-border-color-active: var(--color-primary-400);
+    --button-foreground-active: var(--color-primary-700);
 }
 
 
@@ -208,14 +213,14 @@ button {
 
 button:hover {
     background-color: var(--button-background-hover);
-    border-color: var(--color-primary-300);
-    color: var(--color-primary-800);
+    border-color: var( --button-border-color-hover);
+    color: var(--button-foreground-hover);
 
     cursor: pointer;
 }
 
 button:active {
     background-color: var(--button-background-active);
-    border-color: var(--color-primary-400);
-    color: var(--color-primary-800);
+    border-color: var(--button-border-color-active);
+    color: var(--button-foreground-active);
 }
