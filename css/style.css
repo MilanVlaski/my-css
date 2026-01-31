@@ -224,3 +224,8 @@ button:active {
     border-color: var(--button-border-color-active);
     color: var(--button-foreground-active);
 }
+
+button:focus-visible {
+    outline: solid 3px var(--color-primary-500);
+    /* outline-offset: 1px; */
+}
