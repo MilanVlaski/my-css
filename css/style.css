@@ -52,17 +52,24 @@ summary {
     cursor: pointer;
 }
 
-body {
-    scroll-behavior: smooth;
-}
 
 /* Reset */
 
 :root {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: clamp(16px, 0.5vw + 12px, 24px);
-
+    
     --color-primary-400: oklch(75% 0.15 235);
+    
+    --color-neutral-900: oklch(98% 0 270);
+    --color-neutral-800: oklch(85% 0 270);
+
+    --border-radius: 4px;
+}
+
+body {
+    scroll-behavior: smooth;
+    background-color: var(--color-neutral-900);
 }
 
 /* Typography */
@@ -97,6 +104,9 @@ section {
 h1,
 h2,
 h3,
+h4,
+h5,
+h6,
 p,
 ul,
 ol {
@@ -122,16 +132,15 @@ button {
   padding: 0.5rem 1rem;
   
   /* Typography */
-  /* font-size: 14px; */
   font-weight: 500;
   
   /* should be transparent, and variables should be used */
-  background-color: oklch(100% 0.00011 271.152);
+  background-color: var(--color-neutral-900);
   color: #212529;
   /* border + border color */
-  border: 1px solid oklch(90.279% 0.00765 260.878);
+  border: 1px solid var(--color-neutral-800);
   /* border radius */
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   
   /* Interaction */
   cursor: pointer;
