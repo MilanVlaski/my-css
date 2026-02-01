@@ -335,4 +335,7 @@ button, .button, input[type='submit'], input[type='button'], input[type='reset']
     --button-foreground-active: var(--color-neutral-0);
 }
 
-
+:is(button, .button, input[type='submit'], input[type='button'], input[type='reset'], input[type='image']).outline {
+    --button-background: var(--color-neutral-50); 
+    --button-foreground: var(--input-border-color);
+}
