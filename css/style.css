@@ -114,23 +114,24 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: clamp(16px, 0.5vw + 12px, 24px);
 
-    --color-primary-50: oklch(0.975 0.018 188.29);
-    --color-primary-100: oklch(0.949 0.034 192.06);
-    --color-primary-200: oklch(0.902 0.068 189.13);
-    --color-primary-300: oklch(0.863 0.094 188.78);
-    --color-primary-400: oklch(0.823 0.115 188.18);
-    --color-primary-500: oklch(0.79 0.129 186.7);
-    --color-primary-600: oklch(0.679 0.112 186.56);
-    --color-primary-700: oklch(0.552 0.09 186.96);
-    --color-primary-800: oklch(0.408 0.065 186.09);
-    --color-primary-900: oklch(0.261 0.038 189.41);
-    --color-primary-950: oklch(0.18 0.024 190.37);
+    --color-primary-50: oklch(0.959 0.028 191.21);
+    --color-primary-100: oklch(0.92 0.055 190.57);
+    --color-primary-200: oklch(0.847 0.104 188.46);
+    --color-primary-300: oklch(0.79 0.129 186.7);
+    --color-primary-400: oklch(0.716 0.118 186.4);
+    --color-primary-500: oklch(0.63 0.103 186.54);
+    --color-primary-600: oklch(0.528 0.086 186.5);
+    --color-primary-700: oklch(0.434 0.069 186.75);
+    --color-primary-800: oklch(0.338 0.052 187.3);
+    --color-primary-900: oklch(0.215 0.03 187.72);
+    --color-primary-950: oklch(0.163 0.022 189.75);
 
 
 
     --color-neutral-800: oklch(85.5% 0.005 185);
 
 
+    --color-neutral-0: oklch(100% 0 0);
     --color-neutral-50: oklch(98.5% 0.005 185);
     --color-neutral-100: oklch(90% 0.005 185);
     --color-neutral-200: oklch(80% 0.005 185);
@@ -158,15 +159,6 @@ body {
     --input-border-radius: 4px;
     --input-border-color: var(--color-neutral-200);
 
-    --button-background: var(--color-neutral-50);
-
-    --button-background-hover: var(--color-primary-100);
-    --button-border-color-hover: var(--color-primary-300);
-    --button-foreground-hover: var(--color-primary-700);
-
-    --button-background-active: var(--color-primary-200);
-    --button-border-color-active: var(--color-primary-400);
-    --button-foreground-active: var(--color-primary-700);
 }
 
 
@@ -174,17 +166,28 @@ body {
     background-color: var(--sl-color-neutral-0);
     border-color: var(--sl-input-border-color);
     color: var(--sl-color-neutral-700);
-}
+    }
+    
+    .button--medium {
+        height: auto;
+        min-height: var(--sl-input-height-medium);
+        font-size: var(--sl-button-font-size-medium);
+        line-height: calc(var(--sl-input-height-medium) - var(--sl-input-border-width) * 2);
+        border-radius: var(--sl-input-border-radius-medium);
+        } */
+        
+button, .button, input[type='submit'], input[type='button'], input[type='reset'] {
+    --button-background: var(--color-neutral-50);
+    --button-foreground: currentColor;
+    
+    --button-background-hover: var(--color-primary-100);
+    --button-border-color-hover: var(--color-primary-300);
+    --button-foreground-hover: var(--color-primary-700);
+    
+    --button-background-active: var(--color-primary-200);
+    --button-border-color-active: var(--color-primary-400);
+    --button-foreground-active: var(--color-primary-700);
 
-.button--medium {
-    height: auto;
-    min-height: var(--sl-input-height-medium);
-    font-size: var(--sl-button-font-size-medium);
-    line-height: calc(var(--sl-input-height-medium) - var(--sl-input-border-width) * 2);
-    border-radius: var(--sl-input-border-radius-medium);
-} */
-
-button {
     display: inline-flex;
     align-items: stretch;
     justify-content: center;
@@ -193,39 +196,49 @@ button {
     border-style: solid;
     border-width: var(--input-border-width);
     border-radius: var(--input-border-radius);
-    border-color: var(--input-border-color);
-
+    
     font-weight: 500;
     font-size: 0.875rem;
     text-decoration: none;
     white-space: nowrap;
-
+    
     user-select: none;
-    cursor: inherit;
-
+    cursor: pointer;
+    
     padding: 0.75em 1em;
     transition: var(--transition-x-fast) background-color, var(--transition-x-fast) color, var(--transition-x-fast) border, var(--transition-x-fast) box-shadow;
-
-    /* Default colors */
-    color: currentColor;
+    
+    color: var(--button-foreground);
+    border-color: var(--input-border-color);
     background-color: var(--button-background);
 }
 
-button:hover {
+:is(button, .button, input[type='submit'], input[type='button'], input[type='reset'], input[type='image']):hover {
     background-color: var(--button-background-hover);
     border-color: var( --button-border-color-hover);
     color: var(--button-foreground-hover);
-
-    cursor: pointer;
 }
 
-button:active {
+:is(button, .button, input[type='submit'], input[type='button'], input[type='reset'], input[type='image']):active {
     background-color: var(--button-background-active);
     border-color: var(--button-border-color-active);
     color: var(--button-foreground-active);
 }
 
-button:focus-visible {
+:is(button, .button, input[type='submit'], input[type='button'], input[type='reset'], input[type='image']):focus-visible {
     outline: solid 3px var(--color-primary-500);
-    /* outline-offset: 1px; */
+}
+
+:is(button, .button, input[type='submit'], input[type='button'], input[type='reset'], input[type='image']).primary {
+    --button-background: var(--color-primary-500);
+    --button-foreground: var(--color-neutral-0);
+    --input-border-color: var(--color-primary-500);
+    
+    --button-background-hover: var(--color-primary-400);
+    --button-border-color-hover: var(--color-primary-400);
+    --button-foreground-hover: var(--color-neutral-0);
+    
+    --button-background-active: var(--color-primary-500);
+    --button-border-color-active: var(--color-primary-500);
+    --button-foreground-active: var(--color-neutral-0);
 }
