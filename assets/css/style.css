@@ -268,7 +268,7 @@ body {
     --color-neutral-0: oklch(1% 0.005 185);
 
 
-    --input-border-color: var(--color-neutral-400);
+    --input-border-color: var(--color-neutral-500);
 }
 }
 
@@ -288,7 +288,7 @@ body {
         
 button, .button, input[type='submit'], input[type='button'], input[type='reset'] {
     --button-background: var(--color-neutral-50);
-    --button-foreground: currentColor;
+    --button-foreground: var(--color-neutral-950);
     
     --button-background-hover: var(--color-primary-100);
     --button-border-color-hover: var(--color-primary-300);
