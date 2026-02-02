@@ -265,7 +265,7 @@ body {
     --color-neutral-200: oklch(20% 0.005 185);
     --color-neutral-100: oklch(10% 0.005 185);
     --color-neutral-50: oklch(5% 0.005 185);
-    --color-neutral-0: (1% 0.005 185);
+    --color-neutral-0: oklch(1% 0.005 185);
 
 
     --input-border-color: var(--color-neutral-400);
