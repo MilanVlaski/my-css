@@ -194,11 +194,12 @@ body {
     --input-border-radius: 4px;
     --input-border-color: var(--color-neutral-200);
 
+    --transition-fast: 50ms;
 }
 
 
 /* .button--standard.button--default {
-    background-color: var(--sl-color-neutral-0);
+    background-color: var(--color-neutral-0);
     border-color: var(--sl-input-border-color);
     color: var(--sl-color-neutral-700);
     }
@@ -241,11 +242,11 @@ button, .button, input[type='submit'], input[type='button'], input[type='reset']
     cursor: pointer;
     
     padding: 0.75em 1em;
-    transition: var(--transition-x-fast) background-color, var(--transition-x-fast) color, var(--transition-x-fast) border, var(--transition-x-fast) box-shadow;
-    
     color: var(--button-foreground);
     border-color: var(--input-border-color);
     background-color: var(--button-background);
+
+    transition: var(--transition-fast) background-color, var(--transition-fast) color, var(--transition-fast) border, var(--transition-fast) box-shadow;
 }
 
 :is(button, .button, input[type='submit'], input[type='button'], input[type='reset'], input[type='image']):hover {
@@ -366,3 +367,6 @@ button, .button, input[type='submit'], input[type='button'], input[type='reset']
     border-left: 1px solid var(--color-neutral-700);
 }
 
+:is(button, .button, input[type='submit'], input[type='button'], input[type='reset'], input[type='image']).small {
+    font-size: 0.675rem;
+}
