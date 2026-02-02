@@ -3,6 +3,7 @@
 - [x] Parameterize the values into "button" and "input" specific ones, with the hard coded colors
 - [x] Parameterize those colors into neutrals, defining "shifts" as usually it won't fit 100%
 - [x] Define dark mode, watch it break, define a custom dark mode mapping
+- [ ] Dark mode
 - [ ] Icon buttons
 - [ ] Card
 - [ ] Alert style + Alert mechanism (toast)
@@ -19,6 +20,7 @@
 - [ ] Dropdown
 - [ ] Details
 - [ ] Drawer = Important for menu
+- [ ] Hamburger = take a "menu" ie, a parent with a bunch of children, and put them inside a drawer.
 - [ ] Tree (only for desktop)
 
 # Svgs

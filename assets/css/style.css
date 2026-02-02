@@ -85,6 +85,10 @@ section {
     padding: 1rem;
 }
 
+body > header, body > footer {
+    padding: 1rem;
+}
+
 h1,
 h2,
 h3,
