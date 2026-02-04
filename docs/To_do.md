@@ -3,7 +3,8 @@
 - [x] Parameterize the values into "button" and "input" specific ones, with the hard coded colors
 - [x] Parameterize those colors into neutrals, defining "shifts" as usually it won't fit 100%
 - [x] Define dark mode, watch it break, define a custom dark mode mapping
-- [ ] Dark mode
+- [x] Dark mode
+- [x] ul, li
 - [ ] Icon buttons
 - [ ] Card
 - [ ] Alert style + Alert mechanism (toast)
