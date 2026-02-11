@@ -35,7 +35,7 @@
     
             <h3>HTML Variants</h3>
             <form action="" style="display: inline-block;">
-                <input type="submit" value="Submit Input">
+                <button type="submit">Submit Button Inside A Form</button>
             </form>
             <input type="button" value="Button Input">
             <a href="" class="button">Link Button</a>
@@ -77,17 +77,31 @@
             <h2>Form</h2>
             <form action="">
                 <input type="text">
-                <button>Button</button>
+                <button class="primary" type="submit">Button</button>
             </form>
             <h2>Input</h2>
             <input type="text">
+            <h3>Labeled</h3>
+            <label for="myinput">Something</label>
+            <input type="text" id="myinput">
             <h2>Select</h2>
             <select name="something" id="">
                 <option value="one">One</option>
                 <option value="two">Two</option>
                 <option value="three">Three</option>
             </select>
-            <br><br><br><br><br><br><br><br>
+            <select name="something" id="">
+                <option value="one">Long</option>
+                <option value="two">Two</option>
+                <option value="three">Three</option>
+                <option value="LOOOOOOOOOOOOONG">LOOOOOOOOOOOOONG</option>
+            </select>
+            <select name="something" id="" style="width: unset;">
+                <option value="one">Long</option>
+                <option value="two">Two</option>
+                <option value="three">Three</option>
+                <option value="LOOOOOOOOOOOOONG">LOOOOOOOOOOOOONG</option>
+            </select>
         </section>
     </main>
 </body>
