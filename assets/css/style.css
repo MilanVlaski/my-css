@@ -156,7 +156,12 @@ body {
     --transition-fast: 50ms;
 }
 
-:root {
+a {
+    color: var(--color-primary-600);
+}
+
+:root,
+[data-theme='light'] {
     --color-primary-50: oklch(0.959 0.028 191.21);
     --color-primary-100: oklch(0.92 0.055 190.57);
     --color-primary-200: oklch(0.847 0.104 188.46);
@@ -227,6 +232,7 @@ body {
 }
 
 
+@media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     --color-primary-950: oklch(0.959 0.028 191.21);
     --color-primary-900: oklch(0.92 0.055 190.57);
@@ -296,9 +302,9 @@ body {
 
     --input-border-color: var(--color-neutral-500);
 }
+}
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
+[data-theme='dark'] {
     --color-primary-950: oklch(0.959 0.028 191.21);
     --color-primary-900: oklch(0.92 0.055 190.57);
     --color-primary-800: oklch(0.847 0.104 188.46);
@@ -323,7 +329,7 @@ body {
     --color-success-200: oklch(36% 0.12 150);
     --color-success-100: oklch(28% 0.09 150);
     --color-success-50: oklch(20% 0.06 150);
-    
+
     /* WARNING (Amber/Yellow - Hue 70-95) */
     /* Note: Hue shifts toward 95 (yellow) in lighter steps to stay vibrant */
     --color-warning-950:  oklch(98% 0.02 95);
@@ -366,7 +372,6 @@ body {
 
 
     --input-border-color: var(--color-neutral-500);
-}
 }
         
 button, .button, input[type='submit'], input[type='button'], input[type='reset'] {
