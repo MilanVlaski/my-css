@@ -140,6 +140,8 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: clamp(16px, 0.5vw + 12px, 24px);
 
+    --chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='gray' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+
     --color-primary-50: oklch(0.959 0.028 191.21);
     --color-primary-100: oklch(0.92 0.055 190.57);
     --color-primary-200: oklch(0.847 0.104 188.46);
@@ -153,17 +155,17 @@ body {
     --color-primary-950: oklch(0.163 0.022 189.75);
 
     /* SUCCESS (Green - Hue 150) */
-  --color-yellow-50: oklch(0.971 0.021 154.04);
-  --color-yellow-100: oklch(0.94 0.042 152.73);
-  --color-yellow-200: oklch(0.883 0.084 152.41);
-  --color-yellow-300: oklch(0.83 0.127 151.12);
-  --color-yellow-400: oklch(0.776 0.167 149.34);
-  --color-yellow-500: oklch(0.728 0.192 147.6);
-  --color-yellow-600: oklch(0.614 0.16 147.66);
-  --color-yellow-700: oklch(0.509 0.13 147.99);
-  --color-yellow-800: oklch(0.382 0.093 148.5);
-  --color-yellow-900: oklch(0.248 0.054 148.91);
-  --color-yellow-950: oklch(0.173 0.032 151.91);
+    --color-success-50: oklch(0.971 0.021 154.04);
+    --color-success-100: oklch(0.94 0.042 152.73);
+    --color-success-200: oklch(0.883 0.084 152.41);
+    --color-success-300: oklch(0.83 0.127 151.12);
+    --color-success-400: oklch(0.776 0.167 149.34);
+    --color-success-500: oklch(0.728 0.192 147.6);
+    --color-success-600: oklch(0.614 0.16 147.66);
+    --color-success-700: oklch(0.509 0.13 147.99);
+    --color-success-800: oklch(0.382 0.093 148.5);
+    --color-success-900: oklch(0.248 0.054 148.91);
+    --color-success-950: oklch(0.173 0.032 151.91);
     
     /* WARNING (Amber/Yellow - Hue 70-95) */
     /* Note: Hue shifts toward 95 (yellow) in lighter steps to stay vibrant */
@@ -218,6 +220,8 @@ body {
 
     --input-border-width: 1px;
     --input-border-radius: 4px;
+    --input-padding-inline: 1em;
+    --input-height: 2.5rem;
 
     --transition-fast: 50ms;
 }
@@ -310,6 +314,7 @@ button, .button, input[type='submit'], input[type='button'], input[type='reset']
     align-items: stretch;
     justify-content: center;
     vertical-align: middle;
+    align-items: center;
 
     border-style: solid;
     border-width: var(--input-border-width);
@@ -323,13 +328,48 @@ button, .button, input[type='submit'], input[type='button'], input[type='reset']
     user-select: none;
     cursor: pointer;
     
-    padding: 0.75em 1em;
+    padding-inline: var(--input-padding-inline);
+    height: var(--input-height);
+
     color: var(--button-foreground);
     border-color: var(--input-border-color);
     background-color: var(--button-background);
 
     transition: var(--transition-fast) background-color, var(--transition-fast) color, var(--transition-fast) border, var(--transition-fast) box-shadow;
 }
+
+/* input - keeping this close as it has a lot of similarities with button */
+
+select {
+    /* Remove the default browser arrow */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-image: var(--chevron);
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    padding-inline-end: 0.75rem;
+}
+
+input, select {
+    width: 100%;
+
+    height: var(--input-height);
+
+    border-style: solid;
+    border-width: var(--input-border-width);
+    border-color: var(--input-border-color);
+    border-radius: var(--input-border-radius);
+
+    padding-inline: var(--input-padding-inline);
+
+    color: currentColor;
+    border-color: var(--input-border-color);
+    background-color: var(--color-neutral-50);
+}
+
+/* input */
 
 :is(button, .button, input[type='submit'], input[type='button'], input[type='reset'], input[type='image']):hover {
     background-color: var(--button-background-hover);
@@ -344,8 +384,13 @@ button, .button, input[type='submit'], input[type='button'], input[type='reset']
 }
 
 :is(button, input, select, .button, input[type='submit'], input[type='button'], input[type='reset'], input[type='image']):focus-visible {
-    outline: solid 3px var(--color-primary-500);
-}
+    --input-border-color: var(--color-primary-500);
+    --shadow: oklch(from var(--color-primary-500) l c h / 0.4);
+    box-shadow: 0 0 0 3px var(--shadow);
+    outline: 1px solid var(--shadow);
+    outline-offset: 0px;
+    transition: var(--transition-fast) box-shadow, var(--transition-fast) outline;
+}   
 
 /* The semantic color application to individual components can be customized per project */
 :is(button, .button, input[type='submit'], input[type='button'], input[type='reset'], input[type='image']).primary {
@@ -452,3 +497,13 @@ button, .button, input[type='submit'], input[type='button'], input[type='reset']
 :is(button, .button, input[type='submit'], input[type='button'], input[type='reset'], input[type='image']).small {
     font-size: 0.675rem;
 }
+/* form */
+form * + * {
+    margin-block-start: 0.75rem;
+}
+/* form */
+
+
+/* select */
+
+/* select *.
