@@ -5,6 +5,10 @@
 - [x] Define dark mode, watch it break, define a custom dark mode mapping
 - [x] Dark mode
 - [x] ul, li
+- [ ] Input
+- [ ] Select
+- [ ] Switch
+- [ ] Dropdown
 - [ ] Icon buttons
 - [ ] Card
 - [ ] Alert style + Alert mechanism (toast)
@@ -17,8 +21,6 @@
   - [ ] Range
   - [ ] Input may have helpt text below (better than placeholder)
   - [ ] Clearable, means it has a nice x button
-  - [ ] Switch?
-- [ ] Dropdown
 - [ ] Details
 - [ ] Drawer = Important for menu
 - [ ] Hamburger = take a "menu" ie, a parent with a bunch of children, and put them inside a drawer.

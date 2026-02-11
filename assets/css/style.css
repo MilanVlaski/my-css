@@ -55,7 +55,7 @@ summary {
 
 /* Typography */
 
-p {
+p, ul, ol {
     line-height: 1.5;
     margin-bottom: 1rem;
 }
@@ -78,13 +78,20 @@ h6 { font-size: 1rem; }
 
 p { font-size: 1rem; }
 
-
 section {
     padding-inline: 1rem;
 }
 
 body > header, body > footer {
     padding-inline: 1rem;
+}
+
+body > header {
+    padding-block-start: 1rem;
+}
+
+body > footer {
+    padding-block-end: 1rem;
 }
 
 h1,
@@ -102,6 +109,25 @@ h6 {
 ol, ul {
     margin-inline-start: 1.5rem;
     margin-block-end: 1.5rem;
+}
+
+ul > li,
+ol > li {
+    margin-block-end: 0.2rem;
+}
+
+nav ul, nav ul li {
+    margin: 0;
+}
+
+header nav a {
+    align-self: center;
+}
+
+.container {
+    max-width: 65ch;
+    margin-inline: auto;
+    padding-inline: 1rem;
 }
 
 /* Typography */
@@ -317,7 +343,7 @@ button, .button, input[type='submit'], input[type='button'], input[type='reset']
     color: var(--button-foreground-active);
 }
 
-:is(button, .button, input[type='submit'], input[type='button'], input[type='reset'], input[type='image']):focus-visible {
+:is(button, input, select, .button, input[type='submit'], input[type='button'], input[type='reset'], input[type='image']):focus-visible {
     outline: solid 3px var(--color-primary-500);
 }
 
