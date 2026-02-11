@@ -142,6 +142,21 @@ body {
 
     --chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='gray' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
 
+
+    
+    background-color: var(--color-neutral-50);
+    color: var(--color-neutral-950);
+    
+    
+    --input-border-width: 1px;
+    --input-border-radius: 4px;
+    --input-padding-inline: 1em;
+    --input-height: 2.5rem;
+    
+    --transition-fast: 50ms;
+}
+
+:root {
     --color-primary-50: oklch(0.959 0.028 191.21);
     --color-primary-100: oklch(0.92 0.055 190.57);
     --color-primary-200: oklch(0.847 0.104 188.46);
@@ -209,25 +224,81 @@ body {
 
 
     --input-border-color: var(--color-neutral-200);
+}
 
 
-    --transition-x-fast: 50ms;
+  :root:not([data-theme='light']) {
+    --color-primary-950: oklch(0.959 0.028 191.21);
+    --color-primary-900: oklch(0.92 0.055 190.57);
+    --color-primary-800: oklch(0.847 0.104 188.46);
+    --color-primary-700: oklch(0.79 0.129 186.7);
+    --color-primary-600: oklch(0.716 0.118 186.4);
+    --color-primary-500: oklch(0.63 0.103 186.54);
+    --color-primary-400: oklch(0.528 0.086 186.5);
+    --color-primary-300: oklch(0.434 0.069 186.75);
+    --color-primary-200: oklch(0.338 0.052 187.3);
+    --color-primary-100: oklch(0.215 0.03 187.72);
+    --color-primary-50: oklch(0.163 0.022 189.75);
 
-    background-color: var(--color-neutral-50);
-    color: var(--color-neutral-950);
+    /* SUCCESS (Green - Hue 150) */
+    --color-success-950:  oklch(98% 0.01 150);
+    --color-success-900: oklch(94% 0.04 150);
+    --color-success-800: oklch(90% 0.06 150);
+    --color-success-700: oklch(85% 0.09 150);
+    --color-success-600: oklch(75% 0.12 150);
+    --color-success-500: oklch(65% 0.15 150);
+    --color-success-400: oklch(55% 0.16 150); /* Midpoint */
+    --color-success-300: oklch(45% 0.14 150);
+    --color-success-200: oklch(36% 0.12 150);
+    --color-success-100: oklch(28% 0.09 150);
+    --color-success-50: oklch(20% 0.06 150);
+    
+    /* WARNING (Amber/Yellow - Hue 70-95) */
+    /* Note: Hue shifts toward 95 (yellow) in lighter steps to stay vibrant */
+    --color-warning-950:  oklch(98% 0.02 95);
+    --color-warning-900: oklch(95% 0.05 95);
+    --color-warning-800: oklch(90% 0.09 95);
+    --color-warning-700: oklch(85% 0.12 95);
+    --color-warning-600: oklch(75% 0.15 90);
+    --color-warning-500: oklch(65% 0.16 85);
+    --color-warning-400: oklch(55% 0.15 80); /* Midpoint */
+    --color-warning-300: oklch(45% 0.13 77);
+    --color-warning-200: oklch(36% 0.10 74);
+    --color-warning-100: oklch(28% 0.08 72);
+    --color-warning-50: oklch(20% 0.06 70);
+
+    /* DANGER (Red - Hue 25) */
+    --color-danger-950:  oklch(98% 0.02 25);
+    --color-danger-900: oklch(94% 0.05 25);
+    --color-danger-800: oklch(90% 0.08 25);
+    --color-danger-700: oklch(85% 0.12 25);
+    --color-danger-600: oklch(75% 0.17 25);
+    --color-danger-500: oklch(65% 0.20 25);
+    --color-danger-400: oklch(55% 0.22 25); /* Midpoint */
+    --color-danger-300: oklch(45% 0.19 25);
+    --color-danger-200: oklch(36% 0.16 25);
+    --color-danger-100: oklch(28% 0.13 25);
+    --color-danger-50: oklch(20% 0.10 25);
+
+    --color-neutral-950: oklch(98.5% 0.005 185);
+    --color-neutral-900: oklch(90% 0.005 185);
+    --color-neutral-800: oklch(80% 0.005 185);
+    --color-neutral-700: oklch(70% 0.005 185);
+    --color-neutral-600: oklch(60% 0.005 185);
+    --color-neutral-500: oklch(50% 0.005 185);
+    --color-neutral-400: oklch(40% 0.005 185);
+    --color-neutral-300: oklch(30% 0.005 185);
+    --color-neutral-200: oklch(20% 0.005 185);
+    --color-neutral-100: oklch(10% 0.005 185);
+    --color-neutral-50: oklch(5% 0.005 185);
+    --color-neutral-0: oklch(1% 0.005 185);
 
 
-
-    --input-border-width: 1px;
-    --input-border-radius: 4px;
-    --input-padding-inline: 1em;
-    --input-height: 2.5rem;
-
-    --transition-fast: 50ms;
+    --input-border-color: var(--color-neutral-500);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
+  :root:not([data-theme]) {
     --color-primary-950: oklch(0.959 0.028 191.21);
     --color-primary-900: oklch(0.92 0.055 190.57);
     --color-primary-800: oklch(0.847 0.104 188.46);
