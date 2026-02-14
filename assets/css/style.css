@@ -49,11 +49,9 @@ select,
 summary {
     cursor: pointer;
 }
-
-
 /* Reset */
 
-/* Typography */
+/* Typography - Spacing*/
 
 p, ul, ol {
     line-height: 1.5;
@@ -116,6 +114,7 @@ ol > li {
     margin-block-end: 0.2rem;
 }
 
+/* header nav */
 nav ul, nav ul li {
     margin: 0;
 }
@@ -124,19 +123,34 @@ header nav a {
     align-self: center;
 }
 
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+nav > ul > li:first-child {
+    margin-inline-end: auto;
+}
+/* header nav */
+
 .container {
     max-width: 65ch;
     margin-inline: auto;
     padding-inline: 1rem;
 }
 
-/* Typography */
+/* Typography - Spacing*/
 
 body {
     scroll-behavior: smooth;
 }
 
+/* top level and values */
 :root {
+    color-scheme: light dark;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: clamp(16px, 0.5vw + 12px, 24px);
 
@@ -373,7 +387,9 @@ a {
 
     --input-border-color: var(--color-neutral-500);
 }
-        
+/* top level and values */
+
+/* button */
 button, .button, input[type='submit'], input[type='button'], input[type='reset'] {
     --button-background: var(--color-neutral-50);
     --button-foreground: var(--color-neutral-950);
@@ -572,6 +588,8 @@ select {
     --input-height: 2rem;
     font-size: 0.675rem;
 }
+/* button */
+
 /* form */
 form > * + * {
     margin-block-start: 0.75rem;
@@ -589,8 +607,3 @@ label {
     margin-block-end: 0.3rem;
 }
 /* form */
-
-
-/* select */
-
-/* select *.
